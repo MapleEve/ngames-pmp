@@ -1,0 +1,15 @@
+<h2><%=h @status %> error</h2>
+<link href="/stylesheets/error.css" rel="stylesheet" type="text/css" />
+<% if @message.present? %>
+<div class="row">
+  <div class="col-md-12 page-<%=h @status %>">
+    <div class="number"><%=h @status %></div>
+    <div class="details">
+      <h3>Opps, Server's went wrong.</h3>
+      <p>
+        <%=h @message %> 每次出现这个页面都请找一下Maple，告知出现的场景，以帮助大家优化这个系统.    <a href="javascript:history.back()"><%= l(:button_back) %></a> </p>
+    </div>
+  </div>
+</div>
+<% end %>
+<% html_title @status %>

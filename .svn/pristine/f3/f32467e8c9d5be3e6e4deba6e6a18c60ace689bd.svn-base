@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html
+  lang="zh-CN" class="no-js">
+<head>
+<meta charset="utf-8" />
+<link href="/stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/uniform.default.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/select2_metro.css" />
+<link rel="stylesheet" href="s/tylesheets/DT_bootstrap.css"/>
+<link href="/stylesheets/style-metronic.css" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/style-responsive.css" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/plugins.css" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/error.css" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/custom.css" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/jquery.gritter.css" rel="stylesheet" type="text/css"/>
+<link href="/stylesheets/main.css" rel="stylesheet" type="text/css" />
+  <title>Redmine 404 error</title>
+</head>
+<body>
+<div class="row">
+  <div class="col-md-12 page-404">
+    <div class="number">404</div>
+    <div class="details">
+      <h3>Opps, You're lost.</h3>
+      <p>
+        系统无法找到这个页面.     </p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

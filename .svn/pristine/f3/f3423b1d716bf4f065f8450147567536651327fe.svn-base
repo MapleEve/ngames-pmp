@@ -1,0 +1,15 @@
+.vote-area {
+    display:none;
+    padding: 5px 17px;
+    margin: 10px 10px 30px 0px;
+    border: 1px solid #CCCCCC;
+    text-align:center;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #EEEEEE;
+    float: left;
+}
+
+.vote-result {
+  margin: 0px 0px 15px 0px;
+}

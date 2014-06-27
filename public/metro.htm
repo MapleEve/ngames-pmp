@@ -1,0 +1,142 @@
+<html
+	lang="zh-CN" class="no-js">
+<head>
+<meta charset="utf-8" />
+<link href="stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="stylesheets/uniform.default.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/select2_metro.css" />
+<link rel="stylesheet" href="stylesheets/DT_bootstrap.css"/>
+<link href="stylesheets/style-metronic.css" rel="stylesheet" type="text/css" />
+<link href="stylesheets/style.css" rel="stylesheet" type="text/css" />
+<link href="stylesheets/style-responsive.css" rel="stylesheet" type="text/css" />
+<link href="stylesheets/plugins.css" rel="stylesheet" type="text/css" />
+<link href="stylesheets/custom.css" rel="stylesheet" type="text/css" />
+<link href="stylesheets/jquery.gritter.css" rel="stylesheet" type="text/css"/>
+<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="background-color: #f5ffff;text-align:center;">
+<div class="tiles">
+<a href="/time_entries?spent_on=m&user_id=me" target="_parent">
+	<div class="tile bg-blue double-down">
+		<div class="tile-body">
+			<i class="fa fa-clock-o fa-spin"></i>		</div>
+		<div class="tile-object">
+			<div class="name">本月工时</div>
+		</div>
+	</div>
+</a>
+<a href="/issues?author_id=me&set_filter=1&sort=updated_on&status_id=o" target="_parent">
+	<div class="tile bg-yellow ">
+		<div class="tile-body">
+			<i class="fa fa-comments"></i>		</div>
+		<div class="tile-object">
+			<div class="name">我发出而未决的</div>
+		</div>
+	</div>
+</a>
+<a href="/timesheet/index" target="_parent">
+	<div class="tile bg-purple ">
+		<div class="tile-body">
+			<i class="fa fa-book"></i>		</div>
+		<div class="tile-object">
+			<div class="name">KPI</div>
+		</div>
+	</div>
+</a>
+<a href="/project/ninja" target="_parent">
+	<div class="tile image double">
+		<div class="tile-body">
+			<img alt="" src="images/image.jpg">		</div>
+		<div class="tile-object">
+			<div class="name"></div>
+		</div>
+	</div>
+</a>
+<a href="/issues?assigned_to_id=me&set_filter=1&sort=updated_on" target="_parent">
+	<div class="tile bg-maple double">
+		<div class="tile-body">
+			<i class="fa fa-tachometer"></i>		</div>
+		<div class="tile-object">
+			<div class="name">所有指派给我的</div>
+		</div>
+	</div>
+</a>
+<a href="/issues?assigned_to_id=me&set_filter=1&tracker_id=3&sort=updated_on" target="_parent">
+	<div class="tile bg-orange double">
+		<div class="tile-body">
+			<i class="fa fa-paper-plane-o"></i>		</div>
+		<div class="tile-object">
+			<div class="name">客服指派给我的</div>
+		</div>
+	</div>
+</a>
+<a href="/time_entries?spent_on=m&user_id=me" target="_parent">
+	<div class="tile image four">
+		<div class="tile-body">
+			<img alt="" src="images/image2.jpg">		</div>
+		<div class="tile-object">
+			<div class="name"></div>
+		</div>
+	</div>
+</a>
+<a href="/issues?set_filter=1&sort=updated_on&watcher_id=me" target="_parent">
+	<div class="tile bg-redmine double-down">
+		<div class="tile-body">
+			<i class="fa fa-tasks"></i>		</div>
+		<div class="tile-object">
+			<div class="name">我跟踪的问题</div>
+		</div>
+	</div>
+</a>
+<a href="/issues?status_id=3&author_id=me&sort=updated_on" target="_parent">
+	<div class="tile bg-green double">
+		<div class="tile-body">
+			<i class="fa fa-check"></i>		</div>
+		<div class="tile-object">
+			<div class="name">待我验收的</div>
+		</div>
+	</div>
+</a>
+<a href="/sections" target="_parent">
+	<div class="tile bg-dark ">
+		<div class="tile-body">
+			<i class="fa fa-desktop"></i>		</div>
+		<div class="tile-object">
+			<div class="name">项目组</div>
+		</div>
+	</div>
+</a>
+<a href="http://oa.ngames.cn/" target="_blank">
+	<div class="tile bg-red ">
+		<div class="tile-body">
+			<i class="fa fa-hand-o-right"></i>		</div>
+		<div class="tile-object">
+			<div class="name">去考勤OA</div>
+		</div>
+	</div>
+</a>
+</div>
+<script>
+var pageApp = function () {
+    return {
+        init: function () {
+        	activeMenu('_apply');
+        },
+    };
+}();
+</script>
+<script language=javascript> 
+window.onload = function() {  
+      if(top.location != self.location){  
+    var a = window.parent.document.getElementsByTagName('iframe');  
+    for (var i=0; i<a.length; i++){  
+          if (a[i].name == self.name) {  
+              a[i].height = document.body.scrollHeight; return;  
+                     }  
+              }  
+      }  
+}  
+</script>
+</BODY>
+</html>

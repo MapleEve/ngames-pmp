@@ -1,0 +1,33 @@
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'drafts', :plugin => :redmine_drafts %>
+<% end %>
+
+<% if User.current.logged? %>
+<script>
+$(function() {
+  //ensure draft status div is at the bottom of the fieldset
+  $("#draft-status").appendTo($("#draft-status").closest("fieldset"))
+  //observe changed on the form
+  $("#issue-form").observe(60, function() {
+    $.ajax({
+      url: "<%= autosave_drafts_path(:issue_id => @issue.id) %>",
+      dataType: "script",
+      type: "PUT",
+      data: $(this).serialize(),
+      global: false //no 'loading...' tooltip
+    })
+  })
+})
+</script>
+<% end %>
+
+<div id="draft-status" style="display:none;"></div>
+
+<% if User.current.logged? && @issue.new_record? && params[:issue].nil? %>
+  <% draft = Draft.find_for_issue(:element_id => 0, :user_id => User.current) %>
+  <% if draft %>
+    <div id="draft-pending">
+      <%= render :partial => 'drafts/pending', :locals => { :draft => draft } %>
+    </div>
+  <% end %>
+<% end %>

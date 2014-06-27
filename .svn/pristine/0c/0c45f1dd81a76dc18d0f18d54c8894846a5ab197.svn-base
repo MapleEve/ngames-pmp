@@ -1,0 +1,29 @@
+zh:
+  project_module_custom_workflows_module: "自动化流程"
+  permission_manage_project_workflow: "管理自定义流程"
+  label_custom_workflow: "自定义流程"
+  label_custom_workflow_plural: "自定义流程"
+  label_custom_workflow_new: "新建自定义流程"
+  label_workflow_scripts: "流程脚本"
+  label_enabled_projects: "套用到项目"
+
+  field_after_save: "在问题被保存后执行的流程脚本"
+  field_before_save: "在问题被保存前执行的流程脚本"
+  field_is_enabled: "启用"
+  field_enabled_for_all_projects: "已为所有项目启用"
+
+  field_custom_workflow:
+    script: "流程脚本"
+
+  activerecord:
+    errors:
+      messages:
+        invalid_script: "包含错误数: %{error}"
+        custom_workflow_error: "流程脚本出错 (请联系研发人员Rush.C)"
+        new_status_invalid: "从 '%{old_status}' 到 '%{new_status}' 的转换是禁止的"
+
+  text_select_project_custom_workflows: 选择项目的自定义流程
+  text_custom_workflow_before_save_note: You can change properties of the issues here. Do not create or update related issues in this script. To finish with error, use raise WorkflowError, "Message to user".
+  text_custom_workflow_after_save_note: You can update or create related issues here. Note that this script will be also executed for the newly created issues. So make appropriate checks to prevent infinite recursion.
+  text_custom_workflow_general_note: Both scripts are executed in the context of the issue like ordinary before_save and after_save callbacks. So use methods and properties of the issue directly (or through "self"). Instance variables (@variable) are also allowed and may be used if needed.
+  text_no_enabled_projects: 没有项目

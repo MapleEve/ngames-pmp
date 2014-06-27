@@ -1,0 +1,4 @@
+# English strings go here for Rails i18n
+zh:
+  field_go_to: 去模块
+  label_favorite_projects: 收藏的项目

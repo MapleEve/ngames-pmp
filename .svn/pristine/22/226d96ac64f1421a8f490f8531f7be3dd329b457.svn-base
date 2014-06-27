@@ -1,0 +1,8 @@
+ru:
+  permission_select_project_section: Выбор раздела проекта
+  label_project_section_plural: Разделы проектов
+  label_project_section: Раздел проектов
+  label_project_section_new: Новый раздел проектов
+  label_parent_project_section: Родительский раздел
+  label_unsectioned: Вне разделов
+  label_all_sections: Все разделы

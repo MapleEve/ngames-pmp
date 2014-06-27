@@ -1,0 +1,4 @@
+# pack-refs with: peeled fully-peeled 
+b47bfb13e7aea0fc89de8de7062d8e9311d3a8d3 refs/remotes/origin/master
+da98cb9cb5838fd796d0aaed063f79f81bf489cd refs/remotes/origin/redmine21
+72d260c6fb84ff6d10c52bb9f7941a7889f91e47 refs/remotes/origin/rm2.0.3

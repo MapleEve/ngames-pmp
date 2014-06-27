@@ -1,0 +1,13 @@
+# English strings go here for Rails i18n
+zh:
+  nikoniko_calendar: "每日心情"
+  nikoniko_calendar_short: "心情"
+  nikoniko_calendar_history: "心路历程"
+  nikoniko_score: "心情得分"
+  nikoniko_score_unit: "分"
+  nikoniko_summary: "心情汇总"
+  nikoniko_feel_nil: "今日未签到"
+  nikoniko_feel_good: "不错"
+  nikoniko_feel_ordinary: "一般"
+  nikoniko_feel_bad: "悲剧"
+  nikoniko_feel_no_comment: "暂无评论"
