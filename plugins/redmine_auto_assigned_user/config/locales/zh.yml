@@ -1,0 +1,5 @@
+# English strings go here for Rails i18n
+zh:
+  my_label: "我的标签"
+  label_project_manager_role: "项目分配角色"
+  label_client_roles: "任务上报者"

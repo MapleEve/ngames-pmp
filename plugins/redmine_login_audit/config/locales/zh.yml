@@ -1,0 +1,17 @@
+# English strings go here for Rails i18n
+zh:
+  label_la_admin: "登陆记录"
+  label_la_ip_address: "IP地址"
+  label_la_from_to: "#%{from} 到 #%{to} 在 %{count}"
+  label_la_audit_records_per_page: "每页显示记录数"
+  label_la_notification_email: "邮件通知"
+  help_la_mail_address: "This email address will receive an email every time a user successfully login. Leave empty to disable."
+  mail_la_subject: "Redmine Login Audit: %{user_name} from %{ip_address} on %{date}"
+  mail_la_body_text: "%{user_name} just logged in %{instance} from %{ip_address} on %{date}"
+  mail_la_body_html: "<b>%{user_name}</b> just logged in %{instance} from <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a> on %{date}"
+  label_la_delete_older_than: "删除下列时间之前的记录 "
+  label_la_delete_history: "现在删除!"
+  label_la_delete_all_history: "删除所有记录!"
+  error_la_bad_parameters: "错误的参数!"
+  notice_la_records_deleted: "%{count}个在%{date}前的记录被删除了!"
+  notice_la_records_all_deleted: "%{count}个记录被删除了!"

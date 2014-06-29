@@ -1,0 +1,18 @@
+zh:
+  timesheet_title: KPI报表
+  timesheet_date_range_label: 周期
+  timesheet_date_from_label: 从
+  timesheet_date_to_label: 到
+  timesheet_project_label: 项目
+  timesheet_activities_label: 活动
+  timesheet_users_label: 用户
+  timesheet_showing_users: '显示时间从: '
+  timesheet_permalink: '(本KPI的永久链接)'
+  timesheet_group_by: 分组依据
+  label_show_project_status: "项目状态为:"
+  text_active_projects: "活动的"
+  text_all_projects: "全部 (包含已归档的)"
+  label_user_status: "显示用户状态为"
+  text_active_users: "谨活动的"
+  text_all_users: "全补"
+  timesheet_groups_label: 分组
