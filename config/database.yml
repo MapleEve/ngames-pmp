@@ -1,0 +1,12 @@
+# Default setup is given for MySQL with ruby1.9. If you're running Redmine
+# with MySQL and ruby1.8, replace the adapter name with `mysql`.
+# Examples for PostgreSQL, SQLite3 and SQL Server can be found at the end.
+# Line indentation must be 2 spaces (no tabs).
+
+production:
+  adapter: mysql2
+  database: redmine
+  host: 10.10.21.240
+  username: 1sa
+  password: "1sa!@#"
+  encoding: utf8

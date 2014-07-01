@@ -147,8 +147,18 @@ class IssuesController < ApplicationController
   def create
     call_hook(:controller_issues_new_before_save, { :params => params, :issue => @issue })
     @issue.save_attachments(params[:attachments] || (params[:issue] && params[:issue][:uploads]))
-    if @issue.save
-      call_hook(:controller_issues_new_after_save, { :params => params, :issue => @issue})
+    saved = false
+    begin
+      saved = save_issue_with_child_records
+    rescue ActiveRecord::StaleObjectError
+      @conflict = true
+      if params[:last_journal_id]
+        @conflict_journals = @issue.journals_after(params[:last_journal_id]).all
+        @conflict_journals.reject!(&:private_notes?) unless User.current.allowed_to?(:view_private_notes, @issue.project)
+      end
+    end
+    if @issue.save && saved
+      call_hook(:controller_issues_new_after_save, { :params => params, :issue => @issue })
       respond_to do |format|
         format.html {
           render_attachment_warning_if_needed(@issue)
@@ -433,7 +443,7 @@ class IssuesController < ApplicationController
     @priorities = IssuePriority.active
     @allowed_statuses = @issue.new_statuses_allowed_to(User.current, @issue.new_record?)
     @available_watchers = @issue.watcher_users
-    if @issue.project.users.count <= 20
+    if @issue.project.users.count <= 10
       @available_watchers = (@available_watchers + @issue.project.users.sort).uniq
     end
   end
