@@ -215,6 +215,13 @@ module ApplicationHelper
     link_to(name, "#", :onclick => onclick)
   end
 
+  def toggle_link_relation(name, id, options={})
+    onclick = "$('##{id}').toggle(); "
+    onclick << (options[:focus] ? "$('##{options[:focus]}').focus(); " : "this.blur(); ")
+    onclick << "return false;"
+    link_to(name, "#", :onclick => onclick, :id => 'sub_css', :class => 'sub_css_control' )
+  end
+
   def image_to_function(name, function, html_options = {})
     html_options.symbolize_keys!
     tag(:input, html_options.merge({

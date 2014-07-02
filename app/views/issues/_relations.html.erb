@@ -1,10 +1,9 @@
-<div class="contextual">
+<p><h2><%=l(:label_related_issues)%></h2></p>
 <% if User.current.allowed_to?(:manage_issue_relations, @project) %>
-  <%= toggle_link l(:button_add), 'new-relation-form', {:focus => 'relation_issue_to_id'} %>
+<p>
+  <%= toggle_link_relation l(:button_add) + l(:label_related_issues), 'new-relation-form', {:focus => 'relation_issue_to_id'} %>
+</p>
 <% end %>
-</div>
-
-<p><strong><%=l(:label_related_issues)%></strong></p>
 
 <% if @relations.present? %>
 <form>

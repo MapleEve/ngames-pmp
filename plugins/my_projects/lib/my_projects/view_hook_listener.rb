@@ -5,7 +5,7 @@ class MyProjects < Redmine::Hook::ViewListener
 
   def load_projects()
       html = '<div class="box projects" id="statuses">'
-      html += '<h3 class="">' + l(:label_my_projects) + '</h3>'
+      html += '<h2>' + l(:label_my_projects) + '</h2>'
 
       all_projects  = Project.visible().find(:all, :order => "projects.name")
       admin_projects = []
@@ -30,7 +30,7 @@ class MyProjects < Redmine::Hook::ViewListener
       end
 
       if User.current.admin? && admin_projects.first
-        html += '<h3>' + l(:label_admin_projects) + '</h3>'
+        html += '<h2>' + l(:label_admin_projects) + '</h2>'
         html += '<ul>'
         admin_projects.each do |project|
           html += link_to_project(project)
@@ -44,10 +44,10 @@ class MyProjects < Redmine::Hook::ViewListener
   
   def link_to_project(project)
     html = '<li>'
-    html += "#{link_to h(project.name), { :controller => 'projects', :action => 'show', :id => project } }"
-    html += " | #{link_to l(:label_issue_view_all), { :controller => 'issues', :action=>'index', :project_id => project, :set_filter => 1 } } "
-    html += " | #{link_to l(:label_assigned_to_me_issues), { :controller => 'issues', :action=>'index', :project_id => project, :set_filter => 1, :assigned_to_id => 'me' } } "
-    html += " | #{link_to l(:label_overall_spent_time), project_time_entries_path(project), :spent_on => 'm', :user_id => 'me' } "
+    html += "#{link_to h(project.name), { :controller => 'projects', :action => 'show', :id => project }, :class => 'projects', :id => 'admin-menu'  }"
+    html += " | #{link_to l(:label_issue_view_all), { :controller => 'issues', :action=>'index', :project_id => project, :set_filter => 1 }, :class => 'projects', :id => 'admin-menu' } "
+    html += " | #{link_to l(:label_assigned_to_me_issues), { :controller => 'issues', :action=>'index', :project_id => project, :set_filter => 1, :assigned_to_id => 'me' }, :class => 'projects', :id => 'admin-menu' } "
+    html += " | #{link_to l(:label_overall_spent_time), project_time_entries_path(project), :spent_on => 'm', :user_id => 'me', :class => 'projects', :id => 'admin-menu' } "
     html += '</li>'
     
     return html

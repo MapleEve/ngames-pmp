@@ -76,7 +76,7 @@ end %>
   <%= link_to l(:button_quote), quoted_issue_path(@issue), :remote => true, :method => 'post', :class => 'icon icon-comment' if authorize_for('issues', 'edit') %>
   </div>
 
-  <p><strong><%=l(:field_description)%></strong></p>
+  <p><h2><%=l(:field_description)%></h2></p>
   <div class="wiki">
   <%= textilizable @issue, :description, :attachments => @issue.attachments %>
   </div>
@@ -90,10 +90,10 @@ end %>
 <% if !@issue.leaf? || User.current.allowed_to?(:manage_subtasks, @project) %>
 <hr />
 <div id="issue_tree">
-<div class="contextual">
+<p><h2><%=l(:label_subtask_plural)%></h2></p>
+<p>
   <%= link_to_new_subtask(@issue) if User.current.allowed_to?(:manage_subtasks, @project) %>
-</div>
-<p><strong><%=l(:label_subtask_plural)%></strong></p>
+</p>
 <%= render_descendants_tree(@issue) unless @issue.leaf? %>
 </div>
 <% end %>
@@ -116,7 +116,7 @@ end %>
 
 <% if @journals.present? %>
 <div id="history">
-<h3><%=l(:label_history)%></h3>
+<h2><%=l(:label_history)%></h2>
 <%= render :partial => 'history', :locals => { :issue => @issue, :journals => @journals } %>
 </div>
 <% end %>

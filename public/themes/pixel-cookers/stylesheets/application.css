@@ -1645,3 +1645,34 @@ fieldset#date-range {
 .chzn-container .chzn-results .highlighted {
   background: #439edc;
 }
+
+
+
+/* Maple新增样式 */
+a#sub_css {
+display:block;
+color: #4396ce;
+line-height: 20px;
+font-weight: normal;
+padding: 3px 10px;
+font-size: 20px;
+border:1px solid #CCC;
+background:#FFF;
+text-align: center;
+text-transform: uppercase;
+}
+a:hover#sub_css {
+color: #fff;
+border:1px solid #235f87;
+background:#b0c4de;
+text-decoration: none;
+}
+.m_journal {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background: #f5ffff none repeat scroll 0 0;
+  border: 1px solid #CCCCCC;
+  margin: 5px 0px 5px 1px;
+  padding: 10px 4px 0px 10px;
+}

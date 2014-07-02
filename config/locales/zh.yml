@@ -790,7 +790,7 @@ zh:
   label_missing_api_access_key: 缺少API访问键
   label_api_access_key_created_on: API访问键是在 %{value} 之前建立的
   label_profile: 简介
-  label_subtask_plural: 子任务
+  label_subtask_plural: 子任务分解
   label_project_copy_notifications: 复制项目时发送邮件通知
   label_principal_search: "搜索用户或组："
   label_user_search: "搜索用户："
