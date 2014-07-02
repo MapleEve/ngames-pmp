@@ -35,4 +35,5 @@ public/system*
 /.bundle
 /Gemfile.lock
 /Gemfile.local
+*.svn*
 

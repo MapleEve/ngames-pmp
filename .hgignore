@@ -35,7 +35,8 @@ vendor/rails
 .svn/*
 .svn/
 .git/
-
+*.svn/
+*.svn/*
 .bundle
 Gemfile.lock
 Gemfile.local
