@@ -309,7 +309,7 @@ en:
   field_parent_title: Parent page
   field_editable: Editable
   field_watcher: Watcher
-  field_identity_url: OpenID URL
+  field_identity_url: QQ API
   field_content: Content
   field_group_by: Group results by
   field_sharing: Sharing
@@ -382,7 +382,7 @@ en:
   setting_diff_max_lines_displayed: Maximum number of diff lines displayed
   setting_file_max_size_displayed: Maximum size of text files displayed inline
   setting_repository_log_display_limit: Maximum number of revisions displayed on file log
-  setting_openid: Allow OpenID login and registration
+  setting_openid: Allow QQ login and registration
   setting_password_min_length: Minimum password length
   setting_new_project_user_role_id: Role given to a non-admin user who creates a project
   setting_default_projects_modules: Default enabled modules for new projects
@@ -541,7 +541,7 @@ en:
   label_information_plural: Information
   label_please_login: Please log in
   label_register: Register
-  label_login_with_open_id_option: or login with OpenID
+  label_login_with_open_id_option: or login with QQ
   label_password_lost: Lost password
   label_home: Home
   label_my_page: My page

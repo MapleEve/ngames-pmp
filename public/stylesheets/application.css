@@ -99,6 +99,8 @@ div.modal h3.title {display:none;}
 div.modal p.buttons {text-align:right; margin-bottom:0;}
 
 input#openid_url { background: url(../images/openid-bg.gif) no-repeat; background-color: #fff; background-position: 0 50%; padding-left: 18px; }
+input#user_identity_url { background: url(/images/openid-bg.gif) no-repeat; background-color: #fff; background-position: 0 50%; padding-left: 18px; }
+
 
 .clear:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; }
 
