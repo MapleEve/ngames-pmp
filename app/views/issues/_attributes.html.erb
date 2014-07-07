@@ -1,7 +1,18 @@
 <%= labelled_fields_for :issue, @issue do |f| %>
 
 <div class="splitcontent">
+
 <div class="splitcontentleft">
+	<!--TODO: Maple 加入中文拼音检索支持-->
+    <script>
+        $(document).ready(function() { $("#issue_assigned_to_id").select2(); });  
+        $(document).ready(function() { $("#issue_tracker_id").select2(); });
+        $(document).ready(function() { $("#issue_status_id").select2(); });
+        $(document).ready(function() { $("#issue_project_id").select2(); });
+        $(document).ready(function() { $("#issue_priority_id").select2(); });
+        $(document).ready(function() { $("#issue_category_id").select2(); });
+        $(document).ready(function() { $("#time_entry_activity_id").select2(); });
+    </script>
 <% if @issue.safe_attribute?('status_id') && @allowed_statuses.present? %>
 <p><%= f.select :status_id, (@allowed_statuses.collect {|p| [p.name, p.id]}), {:required => true},
                 :onchange => "updateIssueFrom('#{escape_javascript project_issue_form_path(@project, :id => @issue, :format => 'js')}')" %></p>

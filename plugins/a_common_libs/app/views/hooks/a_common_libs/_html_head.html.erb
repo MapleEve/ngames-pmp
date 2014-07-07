@@ -1,0 +1,66 @@
+<% settings = Setting.plugin_a_common_libs || { } %>
+
+<% if settings['enable_bootstrap_lib'] %>
+  <%= stylesheet_link_tag 'bootstrap.min.css', :plugin => :a_common_libs %>
+  <%= javascript_include_tag 'bootstrap.min.js', :plugin => :a_common_libs %>
+  <%= javascript_include_tag 'bootstrap.modal.ext.js', :plugin => :a_common_libs %>
+<% else %>
+  <% if settings['enable_bootstrap_lib_for_luxury_buttons'] %>
+    <%= javascript_include_tag 'bootstrap.luxury_buttons.min.js', :plugin => :a_common_libs %>
+    <%= javascript_include_tag 'bootstrap.modal.ext.js', :plugin => :a_common_libs %>
+    <%= stylesheet_link_tag 'bootstrap.luxury_buttons.min.css', :plugin => :a_common_libs %>
+  <% end %>
+<% end %>
+
+<% if settings['enable_highcharts_lib'] %>
+  <%= javascript_include_tag 'highcharts.js', :plugin => :a_common_libs %>
+<% end %>
+
+<% if settings['enable_select2_lib'] %>
+  <%= javascript_include_tag 'select2', :plugin => :a_common_libs %>
+  <%= stylesheet_link_tag :select2, :plugin => :a_common_libs %>
+  <%= javascript_include_tag :a_common_libs, :plugin => :a_common_libs %>
+  <% if I18n.locale == :zh %>
+    <%= javascript_include_tag 'select2_locale_zh-CN', :plugin => :a_common_libs %>
+    <%= javascript_include_tag 'mod.udatas.js', :plugin => :a_common_libs %>
+  <% end %>
+<% end %>
+
+<% if settings['enable_qmpicker'] %>
+  <%= javascript_include_tag 'moment.js', :plugin => :a_common_libs %>
+  <%= stylesheet_link_tag :quartermonthpicker, :plugin => :a_common_libs %>
+  <%= javascript_include_tag :quartermonthpicker, :plugin => :a_common_libs %>
+<% end %>
+
+<%= stylesheet_link_tag 'a_common_styles.css', :plugin => :a_common_libs %>
+
+<%= javascript_include_tag 'utils.js', :plugin => :a_common_libs %>
+
+<% if settings['enable_javascript_patches'] %>
+  <%= javascript_include_tag 'patches.js', :plugin => :a_common_libs %>
+<% end %>
+
+<% if settings['enable_modal_windows'] %>
+  <%= javascript_include_tag :modal_windows, :plugin => :a_common_libs %>
+  <%= stylesheet_link_tag :modal_windows, :plugin => :a_common_libs %>
+<% end %>
+
+<%= stylesheet_link_tag :hint, :plugin => :a_common_libs %>
+
+<script>
+//<![CDATA[
+  RMPlus.Utils = (function(my){
+    var my = my || {};
+
+    my.combobox_placeholder = '<%= l(:ajax_placeholder) %>';
+
+    my.combobox_404 = '<%= l(:combobox_404) %>';
+
+    my.combobox_error = '<%= l(:combobox_error) %>';
+
+    return my;
+  })(RMPlus.Utils || {});
+//]]>
+</script>
+
+<%= javascript_include_tag :select2_extentions, :plugin => :a_common_libs %>

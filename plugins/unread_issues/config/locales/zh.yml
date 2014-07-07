@@ -1,0 +1,10 @@
+# English strings go here for Rails i18n
+zh:
+  my_issues_on_my_page: "我的工作台"
+  unread_issues:
+    label_filter_unread: '未读'
+    label_filter_update: '被更新'
+    magic_my_page:
+      label_changes_in_issues: '更新内容'
+      label_new_issues: '新问题'
+      label_view: '查看'

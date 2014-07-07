@@ -1188,3 +1188,24 @@ h2 img { vertical-align:middle; }
   height:1px;
   overflow:hidden;
 }
+
+/* Maple新增 */
+div#s2id_issue_assigned_to_id {
+    width: 60%;
+}
+div#s2id_issue_tracker_id {
+    width: 60%;
+}
+div#s2id_issue_status_id {
+    width: 60%;
+}
+div#s2id_issue_project_id {
+    width: 60%;
+}
+div#s2id_issue_priority_id {
+    width: 60%;
+}
+div#s2id_issue_category_id {
+    width: 60%;
+}
+

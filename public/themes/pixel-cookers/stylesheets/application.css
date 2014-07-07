@@ -1676,3 +1676,24 @@ text-decoration: none;
   margin: 5px 0px 5px 1px;
   padding: 10px 4px 0px 10px;
 }
+div#s2id_issue_assigned_to_id {
+    width: 60%;
+}
+div#s2id_issue_tracker_id {
+    width: 30%;
+}
+div#s2id_issue_status_id {
+    width: 60%;
+}
+div#s2id_issue_project_id {
+    width: 60%;
+}
+div#s2id_issue_priority_id {
+    width: 60%;
+}
+div#s2id_issue_category_id {
+    width: 60%;
+}
+div#s2id_time_entry_activity_id {
+    width: 50%;
+}
