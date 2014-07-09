@@ -485,7 +485,7 @@ a.issue.closed:visited {
   text-decoration: none;
 }
 #footer .bgr:after {
-  content: "| Recoded by Maple for NGames OA";
+  content: "| Recoded for NGames Product Management System";
 }
 #content h2,
 #content .wiki h1 {
@@ -1674,7 +1674,7 @@ text-decoration: none;
   background: #f5ffff none repeat scroll 0 0;
   border: 1px solid #CCCCCC;
   margin: 5px 0px 5px 1px;
-  padding: 10px 4px 0px 10px;
+  padding: 10px 4px 10px 10px;
 }
 div#s2id_issue_assigned_to_id {
     width: 60%;
