@@ -309,8 +309,8 @@
   field_description: 概述
   field_summary: 摘要
   field_is_required: 必填
-  field_firstname: 名字
-  field_lastname: 姓氏
+  field_firstname: 英文名
+  field_lastname: 真实姓名
   field_mail: 電子郵件
   field_filename: 檔案名稱
   field_filesize: 大小

@@ -1,3 +1,7 @@
+<h2>If you are from external IP please visit via http://dev.esazx.com:3000/ or by IP http://60.191.1.98:3000/</h2>
+<br />
+<br />
+<br />
 <h1><%= link_to(h("#{issue.tracker.name} ##{issue.id}: #{issue.subject}"), issue_url) %></h1>
 
 <%= render_email_issue_attributes(issue, users.first, true) %>
@@ -8,7 +12,7 @@
   <fieldset class="attachments"><legend><%= l(:label_attachment_plural) %></legend>
   <% issue.attachments.each do |attachment| %>
     <%= link_to_attachment attachment, :download => true, :only_path => false %>
-    (<%= number_to_human_size(attachment.filesize) %>)<br />
+    <br />
   <% end %>
   </fieldset>
 <% end %>
