@@ -163,7 +163,7 @@ zh:
   notice_successful_connection: 连接成功
   notice_file_not_found: 您访问的页面不存在或已被删除。
   notice_locking_conflict: 数据已被另一位用户更新
-  notice_not_authorized: 对不起，您无权访问此页面。
+  notice_not_authorized: 对不起，您无权访问此页面，要访问的项目可能已经归档。
   notice_not_authorized_archived_project: 要访问的项目已经归档。
   notice_email_sent: "邮件已发送至 %{value}"
   notice_email_error: "发送邮件时发生错误 (%{value})"

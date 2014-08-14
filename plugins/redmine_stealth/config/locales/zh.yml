@@ -1,6 +1,6 @@
 # Simplifeid Chinese strings go here for Rails i18n
 zh:
-  stealth: "隐身模式"
-  enable_stealth_mode: "关闭邮件通知"
-  disable_stealth_mode: "开启邮件通知"
+  stealth: "私密模式"
+  enable_stealth_mode: "正常模式(通知参与者)"
+  disable_stealth_mode: "私密模式(不通知他人)"
   failed_to_toggle_stealth_mode: "无法切换模式"
