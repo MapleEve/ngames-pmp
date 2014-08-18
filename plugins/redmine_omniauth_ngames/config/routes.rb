@@ -1,0 +1,5 @@
+get 'oauth_ngames', :to => 'redmine_oauth#oauth_ngames'
+get 'oauth2callback', :to => 'redmine_oauth#oauth_ngames_callback', :as => 'oauth_ngames_callback'
+get 'login_ngames', :to => 'redmine_oauth#login_ngames'
+get 'loginhash', :to => 'redmine_oauth#loginhash', :as => 'loginhash'
+get 'issuetip', :to => 'redmine_oauth#issuetip', :as => 'issuetip'

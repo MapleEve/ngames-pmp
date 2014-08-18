@@ -256,7 +256,7 @@ zh:
   field_parent: 上级项目
   field_is_in_roadmap: 在路线图中显示
   field_login: 登录名
-  field_mail_notification: 邮件通知
+  field_mail_notification: 通知
   field_admin: 管理员
   field_last_login_on: 最后登录
   field_language: 语言
@@ -302,7 +302,7 @@ zh:
   field_parent_title: 上级页面
   field_editable: 可编辑
   field_watcher: 跟踪者
-  field_identity_url: 企业QQ API
+  field_identity_url: 企业QQ 
   field_content: 内容
   field_group_by: 根据此条件分组
   field_sharing: 共享

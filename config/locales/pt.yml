@@ -806,7 +806,7 @@ pt:
   setting_file_max_size_displayed: Tamanho máximo dos ficheiros de texto exibidos inline
   field_watcher: Observador
   setting_openid: Permitir início de sessão e registo com OpenID
-  field_identity_url: URL do OpenID
+  field_identity_url: QQ 
   label_login_with_open_id_option: ou início de sessão com OpenID
   field_content: Conteúdo
   label_descending: Descendente
