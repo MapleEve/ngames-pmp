@@ -28,7 +28,9 @@ class GroupsController < ApplicationController
     @groups = Group.sorted.all
 
     respond_to do |format|
-      format.html
+      format.html {
+        @user_count_by_group_id = user_count_by_group_id
+      }
       format.api
     end
   end
@@ -137,5 +139,13 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     render_404
+  end
+
+  def user_count_by_group_id
+    h = User.joins(:groups).group('group_id').count
+    h.keys.each do |key|
+      h[key.to_i] = h.delete(key)
+    end
+    h
   end
 end

@@ -157,6 +157,14 @@ module ApplicationHelper
     end
   end
 
+  # Generates a link to a version
+  def link_to_version(version, options = {})
+    return '' unless version && version.is_a?(Version)
+    options = {:title => format_date(version.effective_date)}.merge(options)
+    link_to_if version.visible?, format_version_name(version), { :controller => 'versions', :action => 'show', :id => version }, options
+  end
+
+
   # Helper that formats object for html or text rendering
   def format_object(object, html=true)
     case object.class.name
@@ -175,7 +183,7 @@ module ApplicationHelper
     when 'Project'
       html ? link_to_project(object) : object.to_s
     when 'Version'
-      html ? link_to(object.name, version_path(object)) : object.to_s
+      html ? link_to_version(object) : object.to_s
     when 'TrueClass'
       l(:general_text_Yes)
     when 'FalseClass'
@@ -244,7 +252,7 @@ module ApplicationHelper
   end
 
   def format_version_name(version)
-    if version.project == @project
+    if !version.shared? || version.project == @project
       h(version)
     else
       h("#{version.project} - #{version}")
@@ -867,7 +875,7 @@ module ApplicationHelper
                 if repository && User.current.allowed_to?(:browse_repository, project)
                   name =~ %r{^[/\\]*(.*?)(@([^/\\@]+?))?(#(L\d+))?$}
                   path, rev, anchor = $1, $3, $5
-                  link = link_to h("#{project_prefix}#{prefix}:#{repo_prefix}#{name}"), {:controller => 'repositories', :action => (prefix == 'export' ? 'raw' : 'entry'), :id => project, :repository_id => repository.identifier_param,
+                  link = link_to h("#{project_prefix}#{prefix}:#{repo_prefix}#{name}"), {:only_path => only_path, :controller => 'repositories', :action => (prefix == 'export' ? 'raw' : 'entry'), :id => project, :repository_id => repository.identifier_param,
                                                           :path => to_path_param(path),
                                                           :rev => rev,
                                                           :anchor => anchor},

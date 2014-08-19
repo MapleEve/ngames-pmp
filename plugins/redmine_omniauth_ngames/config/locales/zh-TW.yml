@@ -1,6 +1,5 @@
 zh-TW:
   notice_unable_to_obtain_ngames_credentials: "無法從OA獲取授權."
-  notice_domain_not_allowed: "You can not login using %{domain} domain."
   notice_access_denied: "授權Token 獲取失敗, 請聯繫系統管理員."
   login_via_ngames: "Login via ngames"
   access_token: "獲取 / 刷新授權 Token"

@@ -1,6 +1,5 @@
 en:
   notice_unable_to_obtain_ngames_credentials: "Unable to obtain credentials from ngames."
-  notice_domain_not_allowed: "You can not login using %{domain} domain."
   notice_access_denied: "You must allow to use ngames credentials to enter this site."
   login_via_ngames: "Login via ngames"
   access_token: "Get/Refresh access token"
