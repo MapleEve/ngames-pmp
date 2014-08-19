@@ -170,7 +170,7 @@ module OAuth2
     def sendqq_tips(params)
       opts = {}
       opts[:params] = params
-      response = request(:get, qqtip_url, opts)
+      response = request(:get, options[:qqtip_url], opts)
       # 返回JSON数据
       return response.body
     end

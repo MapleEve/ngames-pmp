@@ -1,9 +1,7 @@
-<h2>If you are from external IP please visit via http://dev.esazx.com:3000/ or by IP http://60.191.1.98:3000/</h2>
-<br />
-<br />
-<br />
-<h1><%= link_to(h("#{issue.tracker.name} ##{issue.id}: #{issue.subject}"), issue_url) %></h1>
 
+
+<h2>Internal Issue Port: <%= link_to(h("#{issue.tracker.name} ##{issue.id}: #{issue.subject}"), issue_url) %></h2>
+<h2>External Issue Port: <a herf='http://dev.esazx.com:3000/issues/<%="#{issue.id}"%>'><%="#{issue.subject}"%></a></h2>
 <%= render_email_issue_attributes(issue, users.first, true) %>
 
 <%= textilizable(issue, :description, :only_path => false) %>

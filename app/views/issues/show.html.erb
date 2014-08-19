@@ -22,7 +22,7 @@
   <%= avatar(@issue.author, :size => "50") %>
 
 <div class="subject">
-<input type="button" onClick="location.href='<%= issuetip_path(:tips_url => issue_url, :tipuser => @issue.assigned_to.name, :tips_content => @issue.subject, :c1 => @issue.priority.name, :c2 => format_date(@issue.due_date), :c3 => @issue.id, :userid => @issue.assigned_to)%>'" name="qq_tips" value="<%=l(:field_mail_notification)%> <%= @issue.assigned_to %> &#187;" tabindex="5"/><%= render_issue_subject_with_tree(@issue) %>
+<%= render_issue_subject_with_tree(@issue) %><% if @issue.assigned_to && @issue.due_date && @issue.subject && @issue.priority.name && !@issue.status.is_closed %><input type="button" onClick="location.href='<%= issuetip_path(:tips_url => issue_url, :tipuser => @issue.assigned_to.name, :tips_content => @issue.subject, :c1 => @issue.priority.name, :c2 => format_date(@issue.due_date), :c3 => @issue.id, :uid => @issue.assigned_to)%>';document.getElementById('qq_tipsbtn').type='hidden';document.getElementById('input_loader').style.display='block';" id="qq_tipsbtn" name="qq_tips" value="<%=l(:tip_notify)%> <%= @issue.assigned_to %> &#187;" tabindex="5"/><div id="input_loader" style="display:none;"><img src="/images/loader.gif"></div><% end %>
 </div>
         <p class="author">
         <%= authoring @issue.created_on, @issue.author %>.

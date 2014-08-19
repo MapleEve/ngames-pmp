@@ -26,8 +26,8 @@
         <% end %>
     </td>
     <td style="text-align:right;">
-        <input type="submit" name="login" value="<%=l(:button_login)%> &#187;" tabindex="5"/>
-        <input type="button" onClick="location.href='/login_ngames'" name="login_ngames" value="<%=l(:field_identity_url)%> <%=l(:button_login)%> &#187;" tabindex="5"/>
+        <p><input type="submit" name="login" value="<%=l(:button_login)%> &#187;" tabindex="5"/></p><p id="input_loader" style="display:none;"><img src="/images/loader.gif"></p>
+        <input type="button" onClick="location.href='/login_ngames';document.getElementById('login_ngames').type='hidden';document.getElementById('input_loader').style.display='block';" id="login_ngames" name="login_ngames" value="<%=l(:field_identity_url)%> <%=l(:button_login)%> &#187;" tabindex="5"/>
     </td>
 </tr>
 </table>

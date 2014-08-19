@@ -6,22 +6,25 @@ require 'uri'
 class RedmineOauthController < AccountController
   include Helpers::MailHelper
   include Helpers::Checker
+  # 请求 token 的方法
   def oauth_ngames
-    if Setting.plugin_redmine_omniauth_ngames[:oauth_authentification]
+    if Setting.plugin_redmine_omniauth_ngames[:oauth_authentification] && User.current.admin?
       session[:back_url] = params[:back_url]
       redirect_to oauth_client.auth_code.authorize_url(:redirect_uri => oauth_ngames_callback_url, :scope => scopes)
     else
+      flash[:error] = l(:notice_access_denied)
       password_authentication
     end
   end
 
-# 登陆的方法
+  # 登陆的方法
   def login_ngames
     if Setting.plugin_redmine_omniauth_ngames[:oauth_authentification]
-      #callback_url = URI.escape('http://esazx.com/loginhash')
-      callback_url = URI.escape('http://127.0.0.1:3000/loginhash')
+      callback_url = URI.escape('http://esazx.com/loginhash')
+      #callback_url = URI.escape('http://127.0.0.1:3000/loginhash')
       redirect_to oauth_client.auth_code.login_url(:callback_url => callback_url)
     else
+      flash[:error] = l(:notice_access_denied)
       password_authentication
     end
   end
@@ -37,8 +40,9 @@ class RedmineOauthController < AccountController
       info = JSON.parse(token.to_s)
       if info && info["code"] == 0
       	# 拿取实际access token
-        flash[:error] = info['data']['access_token']
         @settings[:access_token] = info['data']['access_token']
+        @settings[:access_token].save
+        flash[:notice] = info['data']['access_token']
         redirect_to signin_path
       else
         flash[:error] = token #l(:notice_unable_to_obtain_ngames_credentials)
@@ -49,7 +53,7 @@ class RedmineOauthController < AccountController
 
 # 登陆的回调处理
   def loginhash
-    if params[:tipuser]
+    if params[:account]
       @id = settings[:client_id]
       @secret = settings[:client_secret]
       params[:client_id] = settings[:client_id]
@@ -73,9 +77,9 @@ class RedmineOauthController < AccountController
 
 
 
-# 发送QQ Tip的处理
+# 发送 QQ Tip 的处理
   def issuetip
-    if params[:account]
+    if params[:tipuser]
       @id = settings[:client_id]
       @secret = settings[:client_secret]
       params[:client_id] = settings[:client_id]
@@ -83,16 +87,15 @@ class RedmineOauthController < AccountController
       params[:time] = Time.now.to_i.to_s
       params[:signature_method] = 'md5'
       params[:signature] = Digest::MD5.hexdigest(Time.now.to_i.to_s<<@id<<@secret)
-      params[:tips_title] = params[:c3]
-      params[:tips_content] = params[:tips_content]<<' - '<<params[:c1]<<' - ETA: '<<params[:c2]
+      params[:tips_title] = l(:field_issue)<<' #'<<params[:c3]<<l(:isassigned_to)<<params[:tipuser]
+      params[:tips_content] = params[:tips_content]<<' - '<<l(:field_priority)<<': '<<params[:c1]<<' - '<<l(:field_due_date)<<': '<<params[:c2]<<' By:'<<User.current.name
       params[:display_time] = 0
       params[:receive_type] = 0
-      params[:receivers] = "Maple.G"
+      params[:receivers] = (User.find_by_id(params[:uid]).mail.split('.')[1] =~ /^(\w)@(ngames)$/i) ? User.find_by_id(params[:uid]).mail.split('@')[0] : User.find_by_id(params[:uid]).login
       info = oauth_client.auth_code.sendqq_tips(params)
       info = JSON.parse(info)
-      Rails.logger.info(info)
       if info && info["code"] == 0
-        flash[:notice] = l(:notice_successful_update)
+        flash[:notice] = l(:notify_success)
         redirect_to issue_path(params[:c3])
       else
         flash[:error] = info['message']
@@ -117,7 +120,7 @@ class RedmineOauthController < AccountController
       user.login = info['data']["account"]
       user.mail_notification = 'only_my_events'
       user.linkedin = info['data']["qq"]
-      user.auth_source_id = info['data']["p_dept_id"]
+      user.identity_url = info['data']["p_dept_id"]
       user.phone = info['data']["mobile"]
       if info['data']["gender"].to_i > 0
         user.gender = 0
@@ -150,7 +153,7 @@ class RedmineOauthController < AccountController
         user.login = info['data']["account"]
         user.mail_notification = 'only_my_events'
         user.linkedin = info['data']["qq"]
-        user.auth_source_id = info['data']["p_dept_id"]
+        user.identity_url = info['data']["p_dept_id"]
         if info['data']["gender"].to_i > 0
           user.gender = 0
         else
