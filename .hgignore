@@ -40,4 +40,4 @@ vendor/rails
 .bundle
 Gemfile.lock
 Gemfile.local
-
+.svn/*.db

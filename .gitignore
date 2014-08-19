@@ -21,6 +21,7 @@ public/system*
 /public/plugin_assets
 *.bat
 .svn/*
+.svn/*.db
 /tmp/*
 /tmp/cache/*
 /tmp/pdf/*
