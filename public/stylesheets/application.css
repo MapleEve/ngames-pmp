@@ -869,7 +869,7 @@ div.wiki ul.toc {
   margin-left: 0;
   display: table
 }
-* html div.wiki ul.toc { width: 50%; } /* IE6 doesn't autosize div */
+
 
 div.wiki ul.toc.right { float: right; margin-left: 12px; margin-right: 0; width: auto; }
 div.wiki ul.toc.left  { float: left; margin-right: 12px; margin-left: 0; width: auto; }

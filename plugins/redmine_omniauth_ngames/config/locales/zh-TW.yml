@@ -1,8 +1,8 @@
 zh-TW:
-  notice_unable_to_obtain_ngames_credentials: "無法從OA獲取授權."
-  notice_access_denied: "授權Token 獲取失敗, 請聯繫系統管理員."
-  login_via_ngames: "Login via ngames"
-  access_token: "獲取 / 刷新授權 Token"
-  notify_success: "已成功通知對方"
-  isassigned_to: " 被指派給 "
-  tip_notify: "QQ 彈窗通知"
+  notice_unable_to_obtain_ngames_credentials: 無法從OA獲取授權.
+  notice_access_denied: 授權Token 獲取失敗請聯繫系統管理員.
+  login_via_ngames: Login via ngames
+  access_token: 獲取 / 刷新授權 Token
+  notify_success: 已成功通知對方
+  isassigned_to:  被指派給 
+  tip_notify: QQ彈窗通知

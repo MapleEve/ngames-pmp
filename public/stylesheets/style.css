@@ -37,7 +37,6 @@ Import fonts
 */
 
 /* load Open Sans Font from local */
-@import url(http://oa.ngames.cn/assets/fonts/font.css);
 
 /***
 Reset and overrides  
@@ -51,12 +50,7 @@ body {
   font-size:13px; 
   direction: ltr;
 }
-
-/*
-Internet Explorer 10 doesn't differentiate device width from viewport width, and thus doesn't 
-properly apply the media queries in Bootstrap's CSS. To address this, 
-you can optionally include the following CSS and JavaScript to work around this problem until Microsoft issues a fix.
-*/
+/***Internet Explorer 10 doesn't differentiate device width from viewport width, and thus doesn't properly apply the media queries in Bootstrap's CSS. To address this, you can optionally include the following CSS and JavaScript to work around this problem until Microsoft issues a fix.***/
 @-webkit-viewport { 
   width: device-width; 
 }

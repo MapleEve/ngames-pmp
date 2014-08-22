@@ -137,7 +137,7 @@ module ApplicationHelper
   # Returns the header tags for the current theme
   def heads_for_theme
     if current_theme && current_theme.javascripts.include?('theme')
-      javascript_include_tag current_theme.javascript_path('theme')
+      javascript_include_tag "#{Setting.ui_theme}/javascripts/theme"
     end
   end
 end

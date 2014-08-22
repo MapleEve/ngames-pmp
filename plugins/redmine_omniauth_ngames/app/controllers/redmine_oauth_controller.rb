@@ -20,8 +20,8 @@ class RedmineOauthController < AccountController
   # 登陆的方法
   def login_ngames
     if Setting.plugin_redmine_omniauth_ngames[:oauth_authentification]
-      callback_url = URI.escape('http://esazx.com/loginhash')
-      #callback_url = URI.escape('http://127.0.0.1:3000/loginhash')
+      #callback_url = URI.escape('http://esazx.com/loginhash')
+      callback_url = URI.escape('http://127.0.0.1:3000/loginhash')
       redirect_to oauth_client.auth_code.login_url(:callback_url => callback_url)
     else
       flash[:error] = l(:notice_access_denied)

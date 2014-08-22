@@ -13,6 +13,7 @@
 <div class="splitcontentleft">
 <fieldset class="box tabular">
   <legend><%=l(:label_information_plural)%></legend>
+  <p><input type="button" onClick="location.href='/people/<%= @user.id %>/edit';document.getElementById('edit_avatar').type='hidden';" id="edit_avatar" name="edit_avatar" value="<%=l(:button_edit)%> <%= l(:label_people_avatar) %> &#187;" tabindex="5"/></p>
   <p><%= f.text_field :firstname, :required => true %></p>
   <p><%= f.text_field :lastname, :required => true %></p>
   <p><%= f.text_field :mail, :required => true %></p>

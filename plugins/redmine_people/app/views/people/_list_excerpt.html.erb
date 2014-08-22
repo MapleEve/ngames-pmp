@@ -12,11 +12,11 @@
                     <%= avatar(person, :size => "32", :height => 32, :width => 32) %>
                 </td>
                 <td class="name">
-                    <h1><%= link_to person.name, person_path(person) %></h1>
-                    <h2>
+                    <p><%= link_to person.name, person_path(person) %></p>
+                    <p>
                         <%= mail_to person.mail %>
-                        <div><%= person.phones.first %></div>
-                    </h2>
+                        <p><%= person.phones.first %></p>
+                    </p>
                 </td>
                 <td class="info">
                     <div class="title_and_company" >

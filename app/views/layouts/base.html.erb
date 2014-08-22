@@ -10,9 +10,9 @@
 <%= stylesheet_link_tag 'jquery/jquery-ui-1.9.2', 'application', :media => 'all' %>
 <%= stylesheet_link_tag 'rtl', :media => 'all' if l(:direction) == 'rtl' %>
 <%= javascript_heads %>
-<script src="/javascripts/pangu.js" type="text/javascript"></script>
+<!-- 自动空格, 不支持IE TODO: 改成程序后端渲染时操作 -->
+<%= javascript_include_tag 'pangu' %>
 <%= heads_for_theme %>
-<%= call_hook :view_layouts_base_html_head %>
 <!-- page specific tags -->
 <%= yield :header_tags -%>
 </head>
@@ -87,6 +87,7 @@
 </div>
 </div>
 </div>
+<%= call_hook :view_layouts_base_html_head %>
 <%= call_hook :view_layouts_base_body_bottom %>
 <script>$(function(){pangu.page_spacing();})</script>
 </body>
