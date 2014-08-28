@@ -23,7 +23,7 @@
 
 <% if Setting.openid? %>
   <!--[Maple修改]-->
-  <p><input type="button" onClick="location.href='/login_ngames';document.getElementById('login_ngames').type='hidden';document.getElementById('input_loader').style.display='block';" id="login_ngames" name="login_ngames" value="<%=l(:field_identity_url)%> <%=l(:label_register)%> &#187;" tabindex="5"/></p><p id="input_loader" style="display:none;"><img src="/images/loader.gif"></p>
+  <p><input type="button" onClick="location.href='<%= login_ngames_path(:verify => back_url) %>';document.getElementById('login_ngames').type='hidden';document.getElementById('input_loader').style.display='block';" id="login_ngames" name="login_ngames" value="<%=l(:field_identity_url)%> <%=l(:label_register)%> &#187;" tabindex="5"/></p><p id="input_loader" style="display:none;"><img src="/images/loader.gif"></p>
 <% end %>
 
 <% @user.custom_field_values.select {|v| v.editable? || v.required?}.each do |value| %>

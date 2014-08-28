@@ -20,12 +20,27 @@ class RedmineOauthController < AccountController
   # 登陆的方法
   def login_ngames
     if Setting.plugin_redmine_omniauth_ngames[:oauth_authentification]
-      #callback_url = URI.escape('http://esazx.com/loginhash')
-      callback_url = URI.escape('http://127.0.0.1:3000/loginhash')
+      session[:verify] = params[:verify]
+      if session[:verify] =~ /esazx\.com\//
+        callback_url = URI.escape('http://esazx.com/loginhash')
+      elsif session[:verify] =~ /10\.10\.1\.79/
+        callback_url = URI.escape('http://10.10.1.79/loginhash')
+      else
+        callback_url = URI.escape('http://esazx.com:3333/loginhash')
+      end
       redirect_to oauth_client.auth_code.login_url(:callback_url => callback_url)
     else
       flash[:error] = l(:notice_access_denied)
       password_authentication
+    end
+  end
+
+  def adminauth
+    if User.current.admin? && Setting.plugin_redmine_omniauth_ngames[:adminauth]
+      successful_authentication(User.find_or_initialize_by_mail(params[:u]))
+    else
+      flash[:error] = l(:notice_access_denied)
+      redirect_to signin_path
     end
   end
 
@@ -53,7 +68,7 @@ class RedmineOauthController < AccountController
 
 # 登陆的回调处理
   def loginhash
-    if params[:account]
+    if params[:account] && !User.current.logged?
       @id = settings[:client_id]
       @secret = settings[:client_secret]
       params[:client_id] = settings[:client_id]
@@ -79,7 +94,7 @@ class RedmineOauthController < AccountController
 
 # 发送 QQ Tip 的处理
   def issuetip
-    if params[:tipuser]
+    if params[:tipuser] && User.current.logged? && User.find_by_id(params[:uid]).mail
       @id = settings[:client_id]
       @secret = settings[:client_secret]
       params[:client_id] = settings[:client_id]

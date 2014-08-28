@@ -7,7 +7,7 @@ module RedmineCkeditor
     end
 
     def assets_root
-      @assets_root ||= "#{Redmine::Utils.relative_url_root}/plugin_assets/redmine_ckeditor"
+      @assets_root ||= "#{Redmine::Utils.relative_url_root}/assets"
     end
 
     def allowed_tags
@@ -81,7 +81,7 @@ module RedmineCkeditor
         :allow_embeds => true,
         :default_style => :original,
         :richBrowserUrl => "#{Redmine::Utils.relative_url_root}/rich/files/",
-        :contentsCss => [stylesheet_path("application"), "#{assets_root}/stylesheets/editor.css"],
+        :contentsCss => ["#{assets_root}/pixel-cookers/stylesheets/application.css", "#{assets_root}/stylesheets/editor.css"],
         :bodyClass => "wiki",
         :extraPlugins => plugins.join(","),
         :removePlugins => 'div,flash,forms,iframe',

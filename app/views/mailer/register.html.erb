@@ -1,2 +1,5 @@
 <p><%= l(:mail_body_register) %><br />
 <%= link_to h(@url), @url %></p>
+
+<p>If you are from External Internet, Please use this URL: http://dev.esazx.com:3000/account/activate?token=<%= @token.value %> </p>
+<p>如果你是从外网登陆该系统，请使用以下 URL: http://dev.esazx.com:3000/account/activate?token=<%= @token.value %> </p>

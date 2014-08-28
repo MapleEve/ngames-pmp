@@ -4,12 +4,12 @@ zh:
   label_agile_board: 敏捷面板
   label_agile_board_plural: 敏捷面板
   label_agile_board_thumbnails: 缩略图
-  label_agile_board_more_issues: 更多问题
-  error_agile_status_transition: 无法修改问题状态
+  label_agile_board_more_issues: 更多任务
+  error_agile_status_transition: 无法修改任务状态
   label_agile_board_new: 新的敏捷面板
   label_agile_board_edit: 编辑敏捷面板
   label_agile_my_boards: 我的敏捷面板
-  label_agile_issue_id: 问题ID
+  label_agile_issue_id: 任务ID
 
   permission_manage_public_agile_queries: 编辑公开敏捷面板
   permission_add_agile_queries: 增加敏捷面板
@@ -17,10 +17,10 @@ zh:
 
   #1.1.0
   label_agile_board_default_fields: 默认卡牌区域
-  label_agile_charts_issues_burndown: 问题燃尽
+  label_agile_charts_issues_burndown: 任务燃尽
   label_agile_charts_work_burndown: 工作燃尽
   label_agile_charts_number_of_hours: 工时数
-  label_agile_charts_number_of_issues: 问题数
+  label_agile_charts_number_of_issues: 任务数
   label_agile_charts_cumulative_flow: 累计流程
   label_agile_charts_trackers_cumulative_flow: 跟踪的累计流程
   label_agile_charts_issues_velocity: 速度
@@ -36,35 +36,35 @@ zh:
   label_agile_chart_dates: 图表区间
   label_agile_weighed_ideal_work_remaining: 理想权重
   label_agile_status_colors: 状态颜色
-  label_agile_charts_burnup: 问题燃尽
+  label_agile_charts_burnup: 任务燃尽
   label_agile_charts_number_of_days: 天数
   label_agile_too_many_items: "这张图表由于超过了%{max}个显示限制而无法进行展示"
-  label_agile_time_reports_items_limit: 基于时间的图表问题限制
+  label_agile_time_reports_items_limit: 基于时间的图表任务限制
   label_agile_total_work_remaining: 总共
   label_agile_default_chart: 默认版本图表
 
   #1.1.1
   label_agile_charts_average_velocity: A平均速度
-  label_agile_charts_avarate_number_of_issues: 平均问题数量
+  label_agile_charts_avarate_number_of_issues: 平均任务数量
   label_agile_charts_avarate_number_of_hours: 平均工时
 
   #1.2.0
   label_agile_color: 颜色
   permission_manage_agile_verions: 管理版本计划
   label_agile_version_planning: 版本计划
-  error_agile_version_transition: 无法修改问题版本
+  error_agile_version_transition: 无法修改任务版本
   label_agile_tracker_colors: 跟踪颜色
-  label_agile_issue_priority_colors: 问题优先级颜色
+  label_agile_issue_priority_colors: 任务优先级颜色
   label_agile_color_based_on: 颜色排序条件
   label_agile_color_no_colors: 无颜色
   label_agile_manage_colors: 管理颜色
   label_agile_fullscreen: 全屏
-  label_agile_no_version_issues: 没有版本的问题
+  label_agile_no_version_issues: 没有版本的任务
   label_agile_charts_work_burnup: 工作燃尽图
   label_agile_completed: 完成
   label_agile_exclude_weekends: 排除周末
   label_agile_board_truncated: "这张图表由于超过了%{max}个显示限制而无法进行展示"
   label_agile_board_items_limit: 敏捷面板显示限制
   label_agile_swimlanes: 流程
-  label_agile_minimize_closed: 最小化关闭的问题
+  label_agile_minimize_closed: 最小化关闭的任务
   label_agile_fields: 卡片区

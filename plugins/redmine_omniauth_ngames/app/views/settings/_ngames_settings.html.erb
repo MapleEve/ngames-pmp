@@ -12,8 +12,8 @@
   <%= link_to l(:access_token), oauth_ngames_path() %>
 </p>
 <p>
-  <label>Available domains</label>
-  <%= text_area_tag "settings[allowed_domains]", @settings[:allowed_domains], :rows => 5 %>
+  <label>Turn on Admin Super auth (Test Only!)</label>
+  <%= check_box_tag "settings[adminauth]", true, @settings[:adminauth] %>
 </p>
 <p>
   <label>Oauth authentification:</label>

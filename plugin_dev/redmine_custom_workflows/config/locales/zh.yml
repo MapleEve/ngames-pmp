@@ -7,8 +7,8 @@ zh:
   label_workflow_scripts: "流程脚本"
   label_enabled_projects: "套用到项目"
 
-  field_after_save: "在问题被保存后执行的流程脚本"
-  field_before_save: "在问题被保存前执行的流程脚本"
+  field_after_save: "在任务被保存后执行的流程脚本"
+  field_before_save: "在任务被保存前执行的流程脚本"
   field_is_enabled: "启用"
   field_enabled_for_all_projects: "已为所有项目启用"
 

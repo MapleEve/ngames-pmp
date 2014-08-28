@@ -21,7 +21,7 @@ module PmsAssetPipeline
         config.assets.precompile << Proc.new { |path|
           if path =~ /\.(css|js)\z/
             full_path = Rails.application.assets.resolve(path).to_path
-            asset_paths = %w( plugins/a_common_libs plugins/clipboard_image_paste plugins/project_section plugins/redmine_agile plugins/redmine_workload plugins/redmine_stealth plugins/redmine_customized_report plugins/redmine_people plugins/redmine_lightbox plugins/redmine_timesheet_plugin plugins/redmine_banner public/themes public plugins/redmine_issue_checklist plugins/open_flash_chart plugins/redmine_knowledgebase plugins/redmine_nikoniko_calendar2 plugins/redmine_charts2 plugins/unread_issues plugins/redmine_monitoring_controlling plugins/redmine_login_audit app/assets vendor/assets lib/assets plugins/redmine_ckeditor plugins/redmine_issue_templates plugins/redmine_omniauth_ngames)
+            asset_paths = %w( plugins/issue_hot_buttons plugins/a_common_libs plugins/clipboard_image_paste plugins/project_section plugins/redmine_agile plugins/redmine_workload plugins/redmine_stealth plugins/redmine_customized_report plugins/redmine_people plugins/redmine_lightbox plugins/redmine_timesheet_plugin plugins/redmine_banner public/themes public plugins/redmine_issue_checklist plugins/open_flash_chart plugins/redmine_knowledgebase plugins/redmine_nikoniko_calendar2 plugins/redmine_charts2 plugins/unread_issues plugins/redmine_monitoring_controlling plugins/redmine_login_audit app/assets vendor/assets lib/assets plugins/redmine_ckeditor plugins/redmine_issue_templates plugins/redmine_omniauth_ngames)
             if ((asset_paths.any? {|ap| full_path.include? ap}) && !path.starts_with?('_'))
               # puts "\tIncluding: " + full_path
               true

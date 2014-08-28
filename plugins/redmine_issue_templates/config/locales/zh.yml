@@ -1,28 +1,28 @@
 # Simplified Chinese strings go here for Rails i18n
 zh:
-  issue_templates: 问题模板
-  issue_template: 问题模板
+  issue_templates: 任务模板
+  issue_template: 任务模板
   issue_template_note: 批注
   label_enabled: 启用
   label_disabled: 禁用
   label_help_message: 关于模板
-  label_show_help_message: 当创建/修改问题时显示帮助信息。
+  label_show_help_message: 当创建/修改任务时显示帮助信息。
   about_help_message: 每个项目都可以自定义模板帮助信息。
   close_help: 关闭帮助信息。
-  about_template_help_message: 您可以查看当前项目的问题模板指南。
+  about_template_help_message: 您可以查看当前项目的任务模板指南。
   label_enabled_help_message: 该复选框用于激活当前模板。若您只想将当前模板保存为草稿，请去除该复选框的选择。
   label_list_templates: "模板列表"
   label_new_templates: "新建模板"
   issue_template_name: "模板名称"
   issue_description: "模板内容"
-  issue_title: "问题标题"
-  label_applied_for_issue: "用于该问题的字段："
-  help_for_issue_title: "若在模板中已定义问题标题，则在使用该模板是，将自动应用相关标题信息。"
+  issue_title: "任务标题"
+  label_applied_for_issue: "用于该任务的字段："
+  help_for_issue_title: "若在模板中已定义任务标题，则在使用该模板是，将自动应用相关标题信息。"
   help_for_this_field: "当前字段的帮助。"
   permission_manage_issue_templates: "管理模板"
   permission_edit_issue_templates: "编辑模板"
   permission_show_issue_templates: "显示模板"  
-  project_module_issue_templates: "问题模板"
+  project_module_issue_templates: "任务模板"
   label_isdefault_help_message: "Check and you can use this as a default template of target tracker."
   defaulf_template_loaded: "Loaded default template into description textarea. (Tracker: %{tracker})"
   text_no_tracker_enabled: "Any trackers for this project have not been configured yet.\nPlease set them first because templates are assigned to project trackers. "
@@ -37,7 +37,7 @@ zh:
   label_enabledshaing_help_message: "如果勾选，这个模板将分享给子项目. (子项目中也必须勾选继承母项目模板.)"
   label_should_replaced: "替换标题和描述"
   label_should_replaced_help_message: "If true, existing subject and description are cleared and replaced with template text.（Default is false, and appended text.)"
-  global_issue_templates: "全局问题模板"
+  global_issue_templates: "全局任务模板"
   no_issue_templates_for_this_redmine: "本平台没有预设全局模板."
   only_admin_can_associate_global_template: "只有平台管理员才能在本项目中使用全局平台模板."
   text_no_tracker_enabled_for_global: "追踪没有设定.\n请先在模板中分配追踪项目."

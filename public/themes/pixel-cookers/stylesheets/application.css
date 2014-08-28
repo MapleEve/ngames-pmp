@@ -2984,3 +2984,7 @@ div#s2id_issue_category_id {
 div#s2id_time_entry_activity_id {
     width: 50%;
 }
+span.updated_by_me { }
+span.updated_by_author { color: red; }
+span.updated_by_assignee { }
+span.updated_by_3rd_person { color: brown; }

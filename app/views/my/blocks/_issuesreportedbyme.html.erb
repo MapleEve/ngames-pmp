@@ -1,8 +1,8 @@
-<h3>
+<h2>
   <%= link_to l(:label_reported_issues),
         issues_path(:set_filter => 1, :status_id => '*', :author_id => 'me', :sort => 'updated_on:desc') %>
   (<%= Issue.visible.where(:author_id => User.current.id).count %>)
-</h3>
+</h2>
 
 <% reported_issues = issuesreportedbyme_items %>
 <%= render :partial => 'issues/list_simple', :locals => { :issues => reported_issues } %>

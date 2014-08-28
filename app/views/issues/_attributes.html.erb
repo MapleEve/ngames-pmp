@@ -3,15 +3,28 @@
 <div class="splitcontent">
 
 <div class="splitcontentleft">
-	<!--TODO: Maple 加入中文拼音检索支持-->
+	<!-- TODO: Maple 更好的 Select2 交互支持 -->
     <script>
-        $(document).ready(function() { $("#issue_assigned_to_id").select2(); });  
-        $(document).ready(function() { $("#issue_tracker_id").select2(); });
-        $(document).ready(function() { $("#issue_status_id").select2(); });
-        $(document).ready(function() { $("#issue_project_id").select2(); });
-        $(document).ready(function() { $("#issue_priority_id").select2(); });
-        $(document).ready(function() { $("#issue_category_id").select2(); });
-        $(document).ready(function() { $("#time_entry_activity_id").select2(); });
+        $(function() { $("#issue_assigned_to_id").select2({
+                                                          placeholder: "被指派人"
+                                                          }); });
+        $(function() { $("#issue_tracker_id").select2(); });
+        $(function() { $("#issue_status_id").select2({
+                                                     placeholder: "任务状态"
+                                                     }); });
+        $(function() { $("#issue_project_id").select2(); });
+        $(function() { $("#issue_priority_id").select2({
+                                                       placeholder: "任务优先级"
+                                                       }); });
+        $(function() { $("#issue_category_id").select2({
+                                                       placeholder: "任务所属类别"
+                                                       }); });
+        $(function() { $("#time_entry_activity_id").select2(); });
+        $(function() { $("#issue_fixed_version_id").select2({
+                                                            placeholder: "所属版本 / 里程碑"
+                                                            }); });
+        //$(function() { $("#time_entry_hours").select2({}); });
+        //$(function() { $("#issue_estimated_hours").select2({placeholder: "预期时间"}); });
     </script>
 <% if @issue.safe_attribute?('status_id') && @allowed_statuses.present? %>
 <p><%= f.select :status_id, (@allowed_statuses.collect {|p| [p.name, p.id]}), {:required => true},

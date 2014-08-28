@@ -1,4 +1,4 @@
-<h3><%= l(:label_calendar) %></h3>
+<h2><%= l(:label_calendar) %></h2>
 
 <% calendar = Redmine::Helpers::Calendar.new(Date.today, current_language, :week)
    calendar.events = calendar_items(calendar.startdt, calendar.enddt) %>

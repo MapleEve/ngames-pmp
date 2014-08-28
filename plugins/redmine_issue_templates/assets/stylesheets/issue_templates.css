@@ -128,7 +128,7 @@ label {
 }
 
 .tooltip {
-    background: url(../images/preview.png) no-repeat 3px center;
+    background: url(../images/previewsmall.png) no-repeat 3px center;
     padding-top: 3px;
     padding-left: 24px;
 }

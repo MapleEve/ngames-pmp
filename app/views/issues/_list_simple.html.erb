@@ -4,6 +4,7 @@
     <thead><tr>
     <th>#</th>
     <th><%=l(:field_project)%></th>
+    <th><%=l(:label_last_updated_by)%></th>
     <th><%=l(:field_tracker)%></th>
     <th><%=l(:field_subject)%></th>
     </tr></thead>
@@ -11,10 +12,23 @@
     <% for issue in issues %>
     <tr id="issue-<%= h(issue.id) %>" class="hascontextmenu <%= cycle('odd', 'even') %> <%= issue.css_classes %>">
       <td class="id">
-        <%= check_box_tag("ids[]", issue.id, false, :style => 'display:none;', :id => nil) %>
-        <%= link_to(issue.id, issue_path(issue)) %>
+    <%= check_box_tag("ids[]", issue.id, false, :style => 'display:none;', :id => nil) %>
+        <%= link_to(h(issue.id), :controller => 'issues', :action => 'show', :style => 'display:none;', :id => issue) %>
       </td>
       <td class="project"><%= link_to_project(issue.project) %></td>
+      <% 
+      updatedById = issue.last_updated_by[:id]
+      lastUpdatedByClass = "updated_by_3rd_person"
+      if updatedById == User.current.id
+        lastUpdatedByClass = "updated_by_me"
+      elsif issue.author_id == updatedById 
+        lastUpdatedByClass = "updated_by_author"
+      elsif issue.assigned_to_id == updatedById
+        lastUpdatedByClass = "updated_by_assignee"
+      end
+        
+      %>
+      <td class="user"><span class="<%= lastUpdatedByClass %>"><%=h issue.last_updated_by[:name] %></span></td>
       <td class="tracker"><%= issue.tracker %></td>
       <td class="subject">
         <%= link_to(issue.subject.truncate(60), issue_path(issue)) %> (<%= issue.status %>)

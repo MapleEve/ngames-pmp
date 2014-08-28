@@ -1,0 +1,13 @@
+# English strings go here for Rails i18n
+zh-TW:
+  label_default_my_page_blocks_left: "我的工作台頁面默認顯示(左)"
+  label_default_my_page_blocks_right: "我的工作台頁面默認顯示(右)"
+  label_default_my_page_blocks_top: "我的工作台頁面默認顯示(頂部)"
+  label_default_my_page_block_issuesassignedtome: "指派給我的任務"
+  label_default_my_page_block_issuesreportedbyme: "我提交的任務"
+  label_default_my_page_block_issueswatched: "我跟踪的任務"
+  label_default_my_page_block_news: "新聞"
+  label_default_my_page_block_calendar: "日曆"
+  label_default_my_page_block_documents: "文檔"
+  label_default_my_page_block_timelog: "我的耗時"
+  plugin_test_enhanced_my_page: "強化我的工作台"
