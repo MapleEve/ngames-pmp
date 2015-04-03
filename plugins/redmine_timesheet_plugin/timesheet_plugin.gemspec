@@ -53,7 +53,7 @@ Gem::Specification.new do |s|
      "config/locales/ja.yml",
      "config/locales/lt.yml",
      "config/locales/pl.yml",
-     "config/locales/pt-br.yml",
+     "config/locales/pt-BR.yml",
      "config/locales/ru.yml",
      "config/locales/sr.yml",
      "config/locales/sv.yml",

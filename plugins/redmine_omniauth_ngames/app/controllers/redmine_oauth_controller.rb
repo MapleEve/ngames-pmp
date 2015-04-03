@@ -21,7 +21,11 @@ class RedmineOauthController < AccountController
   def login_ngames
     if Setting.plugin_redmine_omniauth_ngames[:oauth_authentification]
       session[:verify] = params[:verify]
-      if session[:verify] =~ /esazx\.com\//
+      if session[:verify] =~ /\.98:3000/
+        callback_url = URI.escape('http://60.191.1.98:3000/loginhash')
+      elsif session[:verify] =~ /\.com:3000/
+        callback_url = URI.escape('http://dev.esazx.com:3000/loginhash')
+      elsif session[:verify] =~ /esazx\.com\//
         callback_url = URI.escape('http://esazx.com/loginhash')
       elsif session[:verify] =~ /10\.10\.1\.79/
         callback_url = URI.escape('http://10.10.1.79/loginhash')

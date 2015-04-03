@@ -19,20 +19,25 @@
     <%= progress_bar([version.closed_percent, version.completed_percent],
                      :width => '40em', :legend => ('%0.0f%' % version.completed_percent)) %>
     <p class="progress-info">
-      <%= link_to(l(:label_x_issues, :count => version.issues_count), 
+      <%= link_to(l(:label_x_issues, :count => version.issues_count),
                   project_issues_path(version.project,
+                  version_filtered_issues_path(version, :status_id => '*')) %>
                   :status_id => '*', :fixed_version_id => version,
+      &nbsp;
                   :set_filter => 1)) %>
+      (<%= link_to_if(version.closed_issues_count > 0,
         &nbsp;
+                      l(:label_x_closed_issues_abbr, :count => version.closed_issues_count),
         (<%= link_to_if(version.closed_issues_count > 0,
+                      version_filtered_issues_path(version, :status_id => 'c')) %>
                         l(:label_x_closed_issues_abbr, :count => version.closed_issues_count), 
+      &#8212;
                         project_issues_path(version.project, :status_id => 'c',
+      <%= link_to_if(version.open_issues_count > 0,
                         :fixed_version_id => version, :set_filter => 1)) %>
+                     l(:label_x_open_issues_abbr, :count => version.open_issues_count),
         &#8212;
-        <%= link_to_if(version.open_issues_count > 0,
-                       l(:label_x_open_issues_abbr, :count => version.open_issues_count), 
-                       project_issues_path(version.project, :status_id => 'o',
-                       :fixed_version_id => version, :set_filter => 1)) %>)
+                     version_filtered_issues_path(version, :status_id => 'o')) %>)
     </p>
 <% else %>
     <p class="progress-info"><%= l(:label_roadmap_no_issues) %></p>
